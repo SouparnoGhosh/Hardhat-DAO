@@ -17,6 +17,11 @@ const config: HardhatUserConfig = {
   solidity: "0.8.6",
   namedAccounts: { deployer: { default: 0 } },
   networks: {
+    hardhat: {
+      gas: 12000000,
+      blockGasLimit: 0x1fffffffffffff,
+      allowUnlimitedContractSize: true,
+    },
     rinkeby: {
       url: process.env.RINKEBY_URL || "",
       accounts:
